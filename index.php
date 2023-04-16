@@ -140,7 +140,7 @@
                 ['name' => 'Source Keyword Checker', 'url' => '/tools/source-keyword-checker/', 'icon' => 'fas fa-file-code'],
                 ['name' => 'Domains Separater', 'url' => '/tools/domain-separater/', 'icon' => 'fas fa-globe'],
                 ['name' => 'Bot Viewer', 'url' => '/tools/bot-viewer/', 'icon' => 'fas fa-eye'],
-                ['name' => 'SEO Report', 'url' => '/tools/seo-report/', 'icon' => 'fas fa-chart-line']
+                ['name' => 'SEO Report', 'url' => '/tools/checklist/', 'icon' => 'fas fa-chart-line']
             ];
             ?>
             <?php foreach ($tools as $tool): ?>
