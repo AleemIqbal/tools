@@ -19,9 +19,49 @@ document.getElementById('checklist-form').addEventListener('submit', function(ev
       const gaStatus = document.getElementById('ga-status');
       gaStatus.innerHTML = response.ga_status.text;
       gaStatus.className = 'status ' + response.ga_status.class;
+      
+            // Update the preferred version status
+              // Hide the "Not Checked" text and show the preferred version status table
+  document.getElementById('preferred-version-not-checked').style.display = 'none';
+  document.getElementById('preferred-version-status').style.display = 'table';
 
-      // Update other statuses here
-      // ...
+      const preferredVersionStatus = document.getElementById('preferred-version-status');
+      const tbody = preferredVersionStatus.querySelector('tbody');
+      tbody.innerHTML = '';
+      response.version_status_codes.forEach(function(versionStatus) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${versionStatus.url}</td><td>${versionStatus.status_code}</td>`;
+        tbody.appendChild(tr);
+      });
+
+      // Add an option list with "Passed" and "Failed" options for mobile-friendly status
+      const mobileFriendlyStatus = document.getElementById('mobile-friendly-status');
+      mobileFriendlyStatus.innerHTML = `
+        <div class="form-group">
+          <select id="mobile-friendly-select" class="form-control">
+          <option value="passed" class="option-passed">Not Checked</option>
+            <option value="passed" class="option-passed">Passed</option>
+            <option value="failed" class="option-failed">Failed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="mobile-friendly-test" class="btn btn-primary" onclick="window.open('https://search.google.com/test/mobile-friendly?url=${encodeURIComponent(url)}', '_blank')">Test Mobile Friendly</button>
+        </div>
+      `;
+            // Add an option list with "Passed" and "Failed" options for PageSpeed status
+      const pagespeedStatus = document.getElementById('pagespeed-status');
+      pagespeedStatus.innerHTML = `
+        <div class="form-group">
+          <select id="pagespeed-select" class="form-control">
+          <option value="passed" class="option-passed">Not Checked</option>
+            <option value="passed" class="option-passed">Passed</option>
+            <option value="failed" class="option-failed">Failed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="pagespeed-test" class="btn btn-primary" onclick="window.open('https://pagespeed.web.dev/analysis?url=${encodeURIComponent(url)}', '_blank')">Test PageSpeed</button>
+        </div>
+      `;
     }
   };
   xhr.send('url=' + encodeURIComponent(url));

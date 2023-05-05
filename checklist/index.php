@@ -9,6 +9,16 @@
 </head>
   <style>
     /* custom CSS styles */
+    .option-passed {
+  color: green;
+}
+#preferred-version-status {
+  display: none;
+}
+
+.option-failed {
+  color: red;
+}
     .container {
       margin-top: 50px;
     }
@@ -73,17 +83,33 @@
           <td>Make Sure the SSL is active on Website</td>
           <td id="ssl-status" class="status not-checked">Not Checked</td>
         </tr>
+        <tr>
+  <td>Make Sure Website Redirects to One Preferred Version</td>
+  <td>
+  <span id="preferred-version-not-checked" style="color: red;font-weight: bold;">Not Checked</span>
+    <table id="preferred-version-status" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Status Code</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </td>
+</tr>
 		<tr>
 				<td>Make sure the URL structure is either trailing slash or Non Trailing Slash</td>
 				<td id="url-structure-status" class="status not-checked">Not Checked</td>
 			</tr>
 			<tr>
-				<td>Make Sure the Website is Mobile Friendly</td>
-				<td id="mobile-friendly-status" class="status not-checked">Not Checked</td>
-			</tr>
+  <td>Make Sure the Website is Mobile Friendly</td>
+  <td id="mobile-friendly-status" class="status not-checked">Not Checked</td>
+</tr>
 			<tr>
 				<td>Make Sure the Website Passes Web Vitals</td>
-				<td id="web-vitals-status" class="status not-checked">Not Checked</td>
+				<td id="pagespeed-status" class="status not-checked">Not Checked</td>
 			</tr>
 			<tr>
 				<td>Make Sure to use AMP if you have informational Website or Articles</td>

@@ -44,8 +44,28 @@ if ($ssl_stream !== false && $ssl_error_number === 0) {
         ];
     }
 
-    // Other checks go here
-    // ...
+// Check if the website redirects to one preferred version
+$trimmed_url = preg_replace('#^https?://(www\.)?#', '', $url);
+$trimmed_url = rtrim($trimmed_url, '/');
 
+$versions = [
+    'http://' . $trimmed_url,
+    'https://' . $trimmed_url,
+    'http://www.' . $trimmed_url,
+    'https://www.' . $trimmed_url,
+];
+
+$status_codes = [];
+
+foreach ($versions as $version) {
+    $headers = @get_headers($version);
+    $status_code = ($headers !== false) ? intval(substr($headers[0], 9, 3)) : 0;
+    $status_codes[] = [
+        'url' => $version,
+        'status_code' => $status_code,
+    ];
+}
+
+$result['version_status_codes'] = $status_codes;
     echo json_encode($result);
 }
