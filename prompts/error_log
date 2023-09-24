@@ -1,0 +1,6 @@
+[20-Apr-2023 11:16:22 UTC] PHP Parse error:  syntax error, unexpected 'hello' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 331
+[20-Apr-2023 11:16:24 UTC] PHP Parse error:  syntax error, unexpected 'hello' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 331
+[20-Apr-2023 11:19:05 UTC] PHP Parse error:  syntax error, unexpected 't' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 342
+[20-Apr-2023 11:19:33 UTC] PHP Parse error:  syntax error, unexpected 't' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 342
+[20-Apr-2023 11:19:35 UTC] PHP Parse error:  syntax error, unexpected 't' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 342
+[20-Apr-2023 11:19:36 UTC] PHP Parse error:  syntax error, unexpected 't' (T_STRING), expecting ']' in /home/bigtechi/public_html/tools/prompts/index.php on line 342

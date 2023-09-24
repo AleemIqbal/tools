@@ -134,12 +134,15 @@
                 ['name' => 'FAQ Rankmath Block Converter', 'url' => '/tools/rankmath-faq-block-generator/', 'icon' => 'fas fa-exchange-alt'],
                     ['name' => 'Itemlist Schema Generator', 'url' => '/tools/itemlist-generator/', 'icon' => 'fas fa-list'],
                 ['name' => 'ChatGPT Keyword Sentence Generator', 'url' => '/tools/chatgpt-prompt-generator/', 'icon' => 'fas fa-comments'],
+                ['name' => 'ChatGPT Prompts', 'url' => '/tools/prompts/', 'icon' => 'fas fa-comment-dots'],
                 ['name' => 'Meta Title,Description Extractor', 'url' => '/tools/meta-extractor/', 'icon' => 'fas fa-link'],
                 ['name' => 'Ultimate URL Editor', 'url' => '/tools/url-editor/', 'icon' => 'fas fa-edit'],
                 ['name' => 'SERP Bold Extractor', 'url' => '/tools/google-bold-extractor/', 'icon' => 'fas fa-search'],
                 ['name' => 'Source Keyword Checker', 'url' => '/tools/source-keyword-checker/', 'icon' => 'fas fa-file-code'],
                 ['name' => 'Domains Separater', 'url' => '/tools/domain-separater/', 'icon' => 'fas fa-globe'],
                 ['name' => 'Bot Viewer', 'url' => '/tools/bot-viewer/', 'icon' => 'fas fa-eye'],
+ ['name' => 'Ultimate Text Editor', 'url' => '/tools/text-editor/', 'icon' => 'fas fa-file-alt'],
+  ['name' => 'Entities Extractor', 'url' => '/tools/entities-extractor/', 'icon' => 'fas fa-chart-pie'],
                 ['name' => 'SEO Report', 'url' => '/tools/checklist/', 'icon' => 'fas fa-chart-line']
             ];
             ?>
@@ -160,9 +163,9 @@
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <?php
             $chrome_extensions = [
-                ['name' => 'On Page Keyword Checker', 'url' => 'https://github.com/AleemIqbal/keyword-checker-extension/archive/refs/heads/main.zip', 'icon' => 'fas fa-check-circle'],
-                ['name' => 'Image Extractor', 'url' => 'https://github.com/AleemIqbal/image-extractor-extension/archive/refs/heads/main.zip', 'icon' => 'fas fa-image'],
-                ['name' => 'Google Bold Extractor', 'url' => 'https://github.com/AleemIqbal/bold-extractor-extension/archive/refs/heads/main.zip', 'icon' => 'fas fa-bold'],
+                ['name' => 'On Page Keyword Checker', 'url' => 'https://github.com/AleemIqbal/keyword-checker-extension/archive/refs/heads/main.zip', 'download' => 'https://chrome.google.com/webstore/detail/keyword-checker/plndmgedaicbgmocifcjmimognpdnhjf', 'icon' => 'fas fa-check-circle'],
+                ['name' => 'Image Extractor', 'url' => 'https://github.com/AleemIqbal/image-extractor-extension/archive/refs/heads/main.zip' , 'download' => 'https://chrome.google.com/webstore/detail/image-extractor/aenndgkopjmlkcbaohiolnlcfacniknc/related', 'icon' => 'fas fa-image'],
+                ['name' => 'Google Bold Extractor', 'url' => 'https://github.com/AleemIqbal/bold-extractor-extension/archive/refs/heads/main.zip', 'download' => 'https://chrome.google.com/webstore/detail/google-bold-extractor/iihdimlicacgcnignahdlbmefffoejma', 'icon' => 'fas fa-bold'],
             ];
             ?>
            <?php foreach ($chrome_extensions as $chrome_extension): ?>
@@ -171,7 +174,8 @@
                         <div class="card-body text-center">
                             <i class="<?= $chrome_extension['icon'] ?> fa-3x mb-3"></i>
                             <h5 class="card-title"><?= $chrome_extension['name'] ?></h5>
-                            <a href="<?= $chrome_extension['url'] ?>" class="btn btn-primary">Download</a>
+                            <a href="<?= $chrome_extension['download'] ?>" class="btn btn-primary">Download</a>
+                            <a href="<?= $chrome_extension['url'] ?>" class="btn btn-primary">Source Code</a>
                         </div>
                     </div>
                 </div>

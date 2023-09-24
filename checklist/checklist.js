@@ -48,6 +48,12 @@ document.getElementById('checklist-form').addEventListener('submit', function(ev
           <button id="mobile-friendly-test" class="btn btn-primary" onclick="window.open('https://search.google.com/test/mobile-friendly?url=${encodeURIComponent(url)}', '_blank')">Test Mobile Friendly</button>
         </div>
       `;
+      
+    // Update the Cloudflare status
+    const cloudflareStatus = document.getElementById('cdn-status');
+    cloudflareStatus.innerHTML = response.cloudflare_status.text;
+    cloudflareStatus.className = 'status ' + response.cloudflare_status.class;
+    
             // Add an option list with "Passed" and "Failed" options for PageSpeed status
       const pagespeedStatus = document.getElementById('pagespeed-status');
       pagespeedStatus.innerHTML = `

@@ -67,5 +67,19 @@ foreach ($versions as $version) {
 }
 
 $result['version_status_codes'] = $status_codes;
+
+    // Cloudflare check
+    $headers = get_headers($url, 1);
+    if (isset($headers['Server']) && stripos($headers['Server'], 'cloudflare') !== false) {
+        $result['cloudflare_status'] = [
+            'text' => 'Active',
+            'class' => 'checked',
+        ];
+    } else {
+        $result['cloudflare_status'] = [
+            'text' => 'Not Active',
+            'class' => 'not-checked',
+        ];
+    }
     echo json_encode($result);
 }
